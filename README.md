@@ -48,9 +48,10 @@ General: filter Quotebank data based on certain conditions (i.e. movie title inc
 
 RQ1: Simply linear regression?
 
-RQ2.1: 	- Afinn sentiment lexicon with smoothing over time (moving average)
-		- Create a comparison metric between IMDB rating and sentiment in quote
-		- Simple linear regression? (important: same modeling as first RQ about Box Office/quotes relation!)
+RQ2.1: 	
+- Afinn sentiment lexicon with smoothing over time (moving average)
+- Create a comparison metric between IMDB rating and sentiment in quote
+- Simple linear regression? (important: same modeling as first RQ about Box Office/quotes relation!)
 
 RQ2.2
 
