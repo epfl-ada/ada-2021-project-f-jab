@@ -46,7 +46,10 @@ General: filter Quotebank data based on certain conditions (i.e. movie title inc
 
 
 
-RQ1: Simply linear regression?
+RQ1: 
+- Linear regression between the total number of quotes on a movie and gross domestic box office
+- Checking correlation between the distribution of quotes over time and box office time series data
+- Propensity score matching: calculate propensity score with logistic regression, based on movie attributes on IMDb data on few quote vs many quote movies and compare the results with box office data.
 
 RQ2.1: 	
 - Afinn sentiment lexicon with smoothing over time (moving average)
