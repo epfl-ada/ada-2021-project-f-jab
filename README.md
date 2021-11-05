@@ -1,6 +1,4 @@
-# Moviez
-ada-2021-project-f-jab created by GitHub Classroom
-
+# Moviez - ADA project
 
 ## Data story
 RQ = Research Question
