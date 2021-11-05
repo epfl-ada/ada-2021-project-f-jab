@@ -9,7 +9,7 @@
 
 ```A list of research questions you would like to address during the project.```
 
-In this project we aim at addressing the following 4-5 main points. Each of them has 1-2 research questions (RQ) that we aim at answering:
+In this project we aim at addressing the following 3-4 main points with provided research questions (RQ):
 
 1) Relation between Box Office sales and number of quotes of a movie.
 	- RQ1: *Is there a tendency between number of sold tickets and the 'hype' about a movie as it appears in the news paper media?*
