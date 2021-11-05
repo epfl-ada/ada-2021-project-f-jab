@@ -36,6 +36,7 @@ To be able to answer our research questions we need at least two additional data
 and a second one containing information about box office sales. So far we've found the following two sources, that suits our needs:
 
 1) **IMDb movies extensive dataset** that is publicly available on Kaggle. The dataset consists of movie data ranging from 1874-2027.
+2) **Box Office dataset** from Box Office Mojo (by IMDb). No current data file exists so we've been webscraping and created our own `.csv`-file.
 
 
 ## Methods
