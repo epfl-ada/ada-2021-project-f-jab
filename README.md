@@ -9,20 +9,17 @@
 
 ```A list of research questions you would like to address during the project.```
 
-In this project we aim at addressing the following 3-4 main points with provided research questions (RQ):
+We aim at addressing the following 3-4 main points with provided research questions (RQ):
 
 1) Relation between Box Office sales and number of quotes of a movie.
 	- RQ1: *Is there a tendency between number of sold tickets and the 'hype' about a movie as it appears in the news paper media?*
 	
-	
 2) Sentiment analysis in quotes about movies over time. Additionaly relate sentiment to Box Office sales and see if positive/negative media coverage affect the sale of tickets.
 	- RQ: *Does the media/quoters opinion on a certain movie affect the amount of sold tickets?*
 	- RQ: *Does the sentiment seen in quotes relate to the rating on IMDB?*
-
 	
 3) Analyze interdependencies between movies.
 	- RQ: *How does the premiere dates and "public" opinion on a movie and its sales interfere with the sales of another movie and its premiere data?*
-
 
 4) (Maybe:) Interpret if there is a bias in the data
 	- RQ: *Is there a bias within the quotes and sentiment or rating of a movie and the gender, ethnicity, etc.?*
@@ -68,6 +65,8 @@ Eventually implement this as a fun interactive feature!
 	
 
 ## Proposed timeline
+
+- Descriptive statistics before hand-in of Milestone 2
 
 ## Organization within the team
 ```A list of internal milestones up until project Milestone 3.```
