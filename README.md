@@ -5,7 +5,7 @@ ada-2021-project-f-jab created by GitHub Classroom
 ## Data story
 RQ = Research Question
 
-# 1) Relation between Box Office sales and number of quotes about a certain movie
+### 1) Relation between Box Office sales and number of quotes about a certain movie
 	- RQ: "Is there a tendency between number of sold tickets and the 'hype' about a movie in the media?"
 	- How: 
 		○ Simple linear regression?
