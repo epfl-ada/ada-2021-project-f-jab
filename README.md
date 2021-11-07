@@ -75,5 +75,15 @@ Eventually implement this as a fun interactive feature!
 ## Organization within the team
 ```A list of internal milestones up until project Milestone 3.```
 
+- Decide the main topic of our project, hypothesize and propose possible interesting questions 
+- Find dataset on movies and their attributes
+- Find box office time series data
+- Build scraping pipeline for box office data
+- Explore IMDb dataset, extract relevant movie titles in order to filter the Quotbank data
+- Descriptive data analysis on IMDb dataset including plots
+- Load the relevant quotes from Quotebank
+- Explore the Quotes
+- Find NLP model and try sentiment analysis on quotes, validate whether the model works
+
 ## Questions for TAs 
 ```(optional) Add here any questions you have for us related to the proposed project.```
