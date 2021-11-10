@@ -13,7 +13,7 @@ This study will hopefully lay the groundwork for further research into how quote
 
 ```A list of research questions you would like to address during the project.```
 
-We aim at addressing the following 3-4 main points with provided research questions (RQ):
+We aim at addressing the following 4-5 main points with provided research questions (RQ):
 
 1) Relation between Box Office sales and number of quotes of a movie.
 	- RQ1: *Is there a tendency between number of sold tickets and the 'hype' about a movie as it appears in the news paper media?*
@@ -27,6 +27,9 @@ We aim at addressing the following 3-4 main points with provided research questi
 
 4) (Maybe:) Interpret if there is a bias in the data
 	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie and the gender, ethnicity, etc.?*
+
+5) (Maybe:) Movies vs Series With the rise of Netflix, TV Series became an extremely popular source of entertinment
+	- RQ5: *Are the most popular series or movies quoted more frequently on average, is the difference significant? 
 	
 
 ## Proposed additional datasets
@@ -69,13 +72,23 @@ Even though RQ4 is only a "maybe" RQ we suggest the following approaches:
 - Do an observational study where a certain "bias"-parameter is investigated from matching i.a. actors or movies on the remaining available data. For instance we could investigate whether Thriller or Action differ in rating/sentiment score by mathcing based on distribution of number of quotes, etc.. 
 - Ise latent analysis like PCA and reduce dimensionality to 2D for a simple visual inspection.
 
+We plan on investigating RQ5:
+-Calculate the mean number of quotes on movies and series on a daily basis and calculate confidence intervals with bootstrapping.
+-Use regression for comparison of the mean number of quotes across movies and series.
+
 
 Eventually implement a "WhoSaidIt!" function as a fun interactive feature. Here we could simply do a document search using some kind of yet undetermined information retrrieval method such as cosine distance or vector space retrieval.
 	
 
 ## Proposed timeline
 
-- 
+- Investigate RQ1 & RQ2 (by Nov 26)
+- Investigate RQ3, RQ4 & RQ5 (by Dec 3)
+- Discuss results and possible improvements (by Dec 5)
+- Finalize the content of the notebook (by Dec 10)
+- Create Jekyll website, present the data story (by Dec 15)
+- Check if everything is alright before submission (by Dec 17)
+
 
 ## Organization within the team
 ```A list of internal milestones up until project Milestone 3.```
