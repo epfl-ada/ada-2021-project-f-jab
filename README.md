@@ -2,16 +2,12 @@
 
 ## Abstract
 
-```A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?```
-
 This study aims to investigate the correlation between quotes about movies made by people in news articles, movie IMDB rating and movie box office revenue. Furthermore, we intend to investigate whether some quotes may correlate with daily box office revenue. The quotebank dataset gives us a unique opportunity to investigate this correlation and to speculate how certain quotes may influence the sale of tickets for certain movies. We intend to do a semantic analysis on the quotes and investigate whether the old saying “bad publicity is good publicity” is indeed true. Will opinions of movie critics influence the daily box office revenue or will it not have any influence at all?
 
 This study will hopefully lay the groundwork for further research into how quotes in news articles may influence the actions of the average person or even the other way around. This study will only investigate correlation and not causation.
 
 
 ## Research Questions
-
-```A list of research questions you would like to address during the project.```
 
 We aim at addressing the following 4-5 main points with provided research questions (RQ):
 
@@ -29,12 +25,10 @@ We aim at addressing the following 4-5 main points with provided research questi
 	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie and the gender, ethnicity, etc.?*
 
 5) (Maybe:) Movies vs Series With the rise of Netflix, TV Series became an extremely popular source of entertinment
-	- RQ5: *Are the most popular series or movies quoted more frequently on average, is the difference significant? 
+	- RQ5: *Are the most popular series or movies quoted more frequently on average, is the difference significant?*
 	
 
 ## Proposed additional datasets
-
-```List the additional dataset(s) you want to use (if any), and some ideas on how you expect to get, manage, process, and enrich it/them. Show us that you’ve read the docs and some examples, and that you have a clear idea on what to expect. Discuss data size and format if relevant. It is your responsibility to check that what you propose is feasible.```
 
 To be able to answer our research questions we need at least two additional datasets: one that contains information about movies, their release date and IMDb ratings 
 and a second one containing information about box office sales. So far we've found the following two sources, that suits our needs:
@@ -73,8 +67,8 @@ Even though RQ4 is only a "maybe" RQ we suggest the following approaches:
 - Ise latent analysis like PCA and reduce dimensionality to 2D for a simple visual inspection.
 
 We plan on investigating RQ5:
--Calculate the mean number of quotes on movies and series on a daily basis and calculate confidence intervals with bootstrapping.
--Use regression for comparison of the mean number of quotes across movies and series.
+-  Calculate the mean number of quotes on movies and series on a daily basis and calculate confidence intervals with bootstrapping.
+-  Use regression for comparison of the mean number of quotes across movies and series.
 
 
 Eventually implement a "WhoSaidIt!" function as a fun interactive feature. Here we could simply do a document search using some kind of yet undetermined information retrrieval method such as cosine distance or vector space retrieval.
@@ -91,7 +85,6 @@ Eventually implement a "WhoSaidIt!" function as a fun interactive feature. Here 
 
 
 ## Organization within the team
-```A list of internal milestones up until project Milestone 3.```
 
 - Decide the main topic of our project, hypothesize and propose possible interesting questions 
 - Find dataset on movies and their attributes
@@ -104,6 +97,5 @@ Eventually implement a "WhoSaidIt!" function as a fun interactive feature. Here 
 - Find NLP model and try sentiment analysis on quotes, validate whether the model works
 
 ## Questions for TAs 
-```(optional) Add here any questions you have for us related to the proposed project.```
 
 1) Related to RQ2.2 - is linear regression a suitable approach for comparing IMDb ratings to sentiment about movies?
