@@ -24,8 +24,8 @@ We aim at addressing the following 4-5 main points with provided research questi
 4) (Maybe:) Interpret if there is a bias in the data
 	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie w.r.t gender, ethnicity, etc.?*
 
-5) (Maybe:) Movies vs Series With the rise of Netflix, TV Series became an extremely popular source of entertainment
-	- RQ5: *Are the most popular series or movies quoted more frequently on average, is the difference significant?*
+5) (Maybe:) The effect of COVID on media coverage of movies.
+	- RQ5: *Are movies between 2015-2019 quoted more frequently on average than movies came out during the pandemic, is the difference significant?*
 	
 
 ## Proposed additional datasets
@@ -68,8 +68,8 @@ RQ4:
 - Use latent analysis like PCA and reduce dimensionality to 2D for visual inspection.
 
 RQ5:
--  Calculate mean number of quotes on movies and series on a daily basis, calculate confidence intervals (bootstrapping).
--  Use regression for comparison of the mean number of quotes across movies and series, use t-test for comparison of means.
+-  Calculate mean number of quotes on movies between 2015-2019 on a daily basis, calculate confidence intervals (bootstrapping), compare with 2020 data
+-  Use regression for comparison of the mean number of quotes across movies in covid and non-covid period, use t-test for comparison of means.
 
 
 Eventually: implement "WhoSaidIt!" as a fun interactive feature (simply do a document search using some t.b.d. information retrieval method such as cosine distance.
