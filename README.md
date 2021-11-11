@@ -24,7 +24,7 @@ We aim at addressing the following 4-5 main points with provided research questi
 4) (Maybe:) Interpret if there is a bias in the data
 	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie and the gender, ethnicity, etc.?*
 
-5) (Maybe:) Movies vs Series With the rise of Netflix, TV Series became an extremely popular source of entertinment
+5) (Maybe:) Movies vs Series With the rise of Netflix, TV Series became an extremely popular source of entertainment
 	- RQ5: *Are the most popular series or movies quoted more frequently on average, is the difference significant?*
 	
 
@@ -43,7 +43,7 @@ Since the Box Office data is domestic from the U.S. and since we have access to 
 
 ## Methods
 
-First of all we filter the Quotebank data to match certain criterias related to movies. As an example we search quotes for substrings containing movie titles and restrict ourselves to the top 10 movies per year based on box office revenue. See `filteringQuotebank` for more info. Next we run the Quotebank data through an extensive cleaning and preprocessing (`preprocessingQuotebank.ipynb`).
+First of all we filter the Quotebank data to match certain criterias related to movies. As an example we search quotes for substrings containing movie titles and restrict ourselves to the top 10 movies per year based on box office revenue. See `filteringQuotebank` for more info. Next we run the Quotebank data through an extensive cleaning and preprocessing (`preprocessingQuotebank.ipynb`). We do a sentiment analysis on the quotes in `sentiment.ipynb`. Finally we explore the filtered quotes and the imdb dataset in `movies.ipynb`.
 
 For subtasks (RQs) we will have to further filter the data. We prefer doing this in several steps to not lose data that is compatible with the conditions of one subtask even though it is not compatible with another subtask.
 
@@ -57,18 +57,17 @@ We plan on investigating RQ2 - the sentiment investigation - in the following wa
 - RQ2.1 of sentiment of quote related to domestic box office revenue will be done similarly to the linear regression in RQ1.
 - Create a comparison metric between IMDB rating and sentiment in quote and do linear regression to see if there's a mapping between the two.
 
-We plan on investigating RQ3 - the sentiment investigation - in the following ways:
--.-
--.-
--.-
+We plan on investigating RQ3 in the following ways:
+- Pick similar budget movies released close to each other and investigate how to distribution of quotes and the box office data evolves in time.
+- Do Chi-square test of independence on the box office and quotes separatly.
 
 Even though RQ4 is only a "maybe" RQ we suggest the following approaches:
 - Do an observational study where a certain "bias"-parameter is investigated from matching i.a. actors or movies on the remaining available data. For instance we could investigate whether Thriller or Action differ in rating/sentiment score by mathcing based on distribution of number of quotes, etc.. 
 - Ise latent analysis like PCA and reduce dimensionality to 2D for a simple visual inspection.
 
-We plan on investigating RQ5:
+We plan on investigating RQ5 in the following ways:
 -  Calculate the mean number of quotes on movies and series on a daily basis and calculate confidence intervals with bootstrapping.
--  Use regression for comparison of the mean number of quotes across movies and series.
+-  Use regression for comparison of the mean number of quotes across movies and series, use t-test for compariosn of means.
 
 
 Eventually implement a "WhoSaidIt!" function as a fun interactive feature. Here we could simply do a document search using some kind of yet undetermined information retrrieval method such as cosine distance or vector space retrieval.
