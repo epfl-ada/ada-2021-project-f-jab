@@ -30,12 +30,12 @@ We aim at addressing the following 4-5 main points with provided research questi
 
 ## Proposed additional datasets
 
-To be able to answer our research questions we need at least two additional datasets: one that contains information about movies, their release date and IMDb ratings and a second one containing information about (daily) box office sales. We've found the following two sources, that suit our needs:
+To be able to answer our research questions we need at least the following two sources:
 
-1) **IMDb movies extensive dataset** that is publicly available on Kaggle (https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset). The data consist of 4 sub-datasets of movie data ranging from 1874-2027 scraped from the IMDb webpage for movies with more than 100 reviews. As a first thought, we are interested in using the `movies.csv` and `ratings.csv` data files for analyses in which we can access movie titles, year of release, genre, language as well as the IMDb ratings and information about age and gender of the voters. One of the attributes further describes whether the voter is American or not, which becomes important when linking the data with our second dataset. As the Quotebank data we are provided with ranges from 2015 to 2020 we will restrict the IMDb data in this period as well, meaning a significant decrease in size of the IMDb dataset. Eventually, we could use the RottenTomatoes dataset (referred to at the Kaggle page) for more valid rating of a movie is provided as the critics ratings are encountered as well.
+1) **IMDb movies extensive dataset** that is publicly available on Kaggle (https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset). The data consist of 4 sub-datasets of movie data ranging from 1874-2027 scraped from the IMDb webpage for movies with more than 100 reviews. As a first thought, we are interested in using the `movies.csv` and `ratings.csv` data files for analyses in which we can access movie titles, year of release, genre, language as well as the IMDb ratings and information about age and gender of the voters. One of the attributes further describes whether the voter is American or not, which becomes important when linking the data with our second dataset. Eventually, we could use the RottenTomatoes dataset (referred to at the Kaggle page) for more valid rating of a movie is provided as the critics ratings are encountered as well.
 
 
-2) **Box Office dataset** from Box Office Mojo (by IMDb). No current self-containing data files exists so we've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (i.a. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. Some dates hold additional information of whether cinemas were affected by COVID, holidays, etc. that might come in handy for further analyses. The size of the data grows linearly with the amount of desired movies to be investigated, which might restrict us to focusing on determined movies, like the Top 10 in terms of gross within a given period. For more specifics on the procedure, see `time_series_box_office_scraping-ipynb`.
+2) **Box Office dataset** from Box Office Mojo (by IMDb). No current self-containing data files exists so we've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. Some dates hold additional information of whether cinemas were affected by COVID, holidays, etc. that might come in handy for further analyses. The size of the data grows linearly with the amount of desired movies to be investigated, which might restrict us to focusing on determined movies, like the Top 10 in terms of gross within a given period. For more specifics on the procedure, see `time_series_box_office_scraping-ipynb`.
 
 
 3) **Google-Trends-API** If we need further insight into how the hype around a movie evolved over time, we can pull the historical, hourly distribution of Google Search Querys about the movie title from the Google-Trends-API via pytrends (https://pypi.org/project/pytrends).
@@ -45,31 +45,31 @@ Since the Box Office data is domestic from the U.S. and since we have access to 
 
 ## Methods
 
-First, we filter the Quotebank data to match certain criteria. We look for substrings containing movie titles, restricting ourselves to the top 10 movies per year based on box office revenue. See `filter_quotes.ipynb` for more info. Next we run the Quotebank data through an extensive cleaning and preprocessing (`preprocessingQuotebank.ipynb`). We do a sentiment analysis on the quotes in `sentiment.ipynb`. Finally we explore the filtered quotes and the imdb dataset in `movies.ipynb`.
+First, we filter the Quotebank data to match the top 10 movies per year based on box office revenue. (`filter_quotes.ipynb`). Next we run the Quotebank data through cleaning and preprocessing (`preprocessingQuotebank.ipynb`). We do a sentiment analysis in `sentiment.ipynb`. Finally we explore the quotes and the imdb dataset (`movies.ipynb`).
 
-For subtasks (RQs) we will have to further filter the data. We prefer doing this in several steps to not lose data that is compatible with the conditions of one subtask even though it is not compatible with another subtask. We plan to do the following per subtask:
+For subtasks (RQs) we plan to do the following:
 
 RQ1:
-- Linear regression between the total number of quotes on a movie and domestic box office revenue.
-- Checking correlation between the distribution of quotes over time and box office time series data.
+- Linear regression between total number of quotes on a movie and domestic box office revenue.
+- Checking correlation between distribution of quotes over time and box office time series data.
 - Propensity score matching: calculate propensity score with logistic regression, based on movie attributes on IMDb data on few quote vs many quote movies and compare the results with box office data.
 
 RQ2:
 - Assign sentiment scores using Afinn sentiment lexicon and analyse time series by using a smoothness filter or moving average.
-- RQ2.1 of sentiment of quote related to domestic box office revenue will be done similarly to the linear regression in RQ1.
-- Create a comparison metric between IMDB rating and sentiment in quote and do linear regression to see if there's a mapping between the two.
+- sentiment of quote related to domestic box office revenue: similarly to RQ1.
+- Create comparison metric between IMDB rating and sentiment in quote and do linear regression to see if there's a mapping.
 
 RQ3:
-- Pick similar budget movies released close to each other and investigate how to distribution of quotes and the box office data evolves in time.
+- Pick similarly budgeted movies released close to each other, investigate how distribution of quotes and box office data evolves over time.
 - Do Chi-square test of independence on the box office and quotes separatly.
 
 RQ4:
-- Do an observational study where a certain "bias"-parameter is investigated from matching i.a. actors or movies on the remaining available data. For instance we could investigate whether Thriller or Action differ in rating/sentiment score by mathcing based on distribution of number of quotes, etc.. 
-- Ise latent analysis like PCA and reduce dimensionality to 2D for a simple visual inspection.
+- Do observational study where a certain "bias"-parameter is investigated from matching e.g. actors or movies on the remaining available data. (e.g. investigate whether Thriller and Action differ in rating) 
+- Use latent analysis like PCA and reduce dimensionality to 2D for visual inspection.
 
 RQ5:
--  Calculate the mean number of quotes on movies and series on a daily basis and calculate confidence intervals with bootstrapping.
--  Use regression for comparison of the mean number of quotes across movies and series, use t-test for compariosn of means.
+-  Calculate mean number of quotes on movies and series on a daily basis, calculate confidence intervals (bootstrapping).
+-  Use regression for comparison of the mean number of quotes across movies and series, use t-test for comparison of means.
 
 
 Eventually: implement "WhoSaidIt!" as a fun interactive feature (simply do a document search using some t.b.d. information retrieval method such as cosine distance.
