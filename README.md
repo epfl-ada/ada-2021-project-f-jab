@@ -32,10 +32,9 @@ We aim at addressing the following 4-5 main points with provided research questi
 
 To be able to answer our research questions we need at least the following two sources:
 
-1) **IMDb movies extensive dataset** that is publicly available on Kaggle (https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset). The data consist of 4 sub-datasets of movie data ranging from 1874-2027 scraped from the IMDb webpage for movies with more than 100 reviews. As a first thought, we are interested in using the `movies.csv` and `ratings.csv` data files for analyses in which we can access movie titles, year of release, genre, language as well as the IMDb ratings and information about age and gender of the voters. One of the attributes further describes whether the voter is American or not, which becomes important when linking the data with our second dataset. Eventually, we could use the RottenTomatoes dataset (referred to at the Kaggle page) for more valid rating of a movie is provided as the critics ratings are encountered as well.
+1) **IMDb movies extensive dataset** from Kaggle (https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset). The data consists of 4 sub-datasets of movie data ranging from 1874-2027 from the IMDb webpage for movies with more than 100 reviews. We use the `movies.csv` and `ratings.csv` data files for analyses in which we can access movie titles, year of release, genre, language, IMDb ratings and age and gender of the voters, also whether the voter is American. We could use RottenTomatoes dataset (referred to at Kaggle) for critics ratings.
 
-
-2) **Box Office dataset** from Box Office Mojo (by IMDb). No current self-containing data files exists so we've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. Some dates hold additional information of whether cinemas were affected by COVID, holidays, etc. that might come in handy for further analyses. The size of the data grows linearly with the amount of desired movies to be investigated, which might restrict us to focusing on determined movies, like the Top 10 in terms of gross within a given period. For more specifics on the procedure, see `time_series_box_office_scraping-ipynb`.
+2) **Box Office dataset** from BoxOfficeMojo (by IMDb). We've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. (see `time_series_box_office_scraping-ipynb`).
 
 
 3) **Google-Trends-API** If we need further insight into how the hype around a movie evolved over time, we can pull the historical, hourly distribution of Google Search Querys about the movie title from the Google-Trends-API via pytrends (https://pypi.org/project/pytrends).
@@ -45,7 +44,7 @@ Since the Box Office data is domestic from the U.S. and since we have access to 
 
 ## Methods
 
-First, we filter the Quotebank data to match the top 10 movies per year based on box office revenue. (`filter_quotes.ipynb`). Next we run the Quotebank data through cleaning and preprocessing (`preprocessingQuotebank.ipynb`). We do a sentiment analysis in `sentiment.ipynb`. Finally we explore the quotes and the imdb dataset (`movies.ipynb`).
+We filter the Quotebank data to match the top 10 movies per year based on box office revenue. (`filter_quotes.ipynb`). We run the Quotebank data through cleaning and preprocessing (`preprocessingQuotebank.ipynb`). We do a sentiment analysis in `sentiment.ipynb`. Finally we explore the quotes and the imdb dataset (`movies.ipynb`).
 
 For subtasks (RQs) we plan to do the following:
 
