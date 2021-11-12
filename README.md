@@ -56,7 +56,7 @@ RQ1:
 
 RQ2:
 - Create a naive and simple sentiment model based on sentiment scores using Afinn sentiment lexicon and analyse time series by using a smoothness filter or moving average. Define a metric that normalizes the sentiment score with regards to the length of a quote.
-- Eventually fit a more clever and complex sentiment prediction model that incorporates semantical relation between words in quotes.
+- Find a more clever and complex sentiment prediction model that incorporates semantic relations between words in quotes.
 - Sentiment of quote related to domestic box office revenue: similarly to RQ1.
 - Create comparison metric between IMDB rating and sentiment in quote and do linear regression to see if there's a mapping.
 
