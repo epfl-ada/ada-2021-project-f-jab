@@ -21,12 +21,9 @@ We aim at addressing the following 4-5 main points with provided research questi
 3) Analyze interdependencies between movies.
 	- RQ3: *How does the premiere dates and "public" opinion on a movie and its sales interfere with the sales of another movie and its premiere data?*
 
-4) (Maybe:) Interpret if there is a bias in the data
+4) Interpret if there is a bias in the data
 	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie w.r.t gender, ethnicity, etc.?*
 
-5) (Maybe:) The effect of COVID on media coverage of movies.
-	- RQ5: *Are movies between 2015-2019 quoted more frequently on average than movies came out during the pandemic, is the difference significant?*
-	
 
 ## Proposed additional datasets
 
@@ -37,14 +34,15 @@ To be able to answer our research questions we need at least the following two s
 2) **Box Office dataset** from BoxOfficeMojo (by IMDb). We've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. (see `time_series_box_office_scraping-ipynb`).
 
 
-3) **Google-Trends-API** If we need further insight into how the hype around a movie evolved over time, we can pull the historical, hourly distribution of Google Search Querys about the movie title from the Google-Trends-API via pytrends (https://pypi.org/project/pytrends).
-
-
 Since the Box Office data is domestic from the U.S. and since we have access to determining whether IMDb ratings are from U.S or non U.S. voters, we will restrict ourselves to look at movie data with all relevant domestic attributes are restricted to the U.S..
 
-## Methods
 
-We filter the Quotebank data to match the top 10 movies per year based on box office revenue. (`filter_quotes.ipynb`). We run the Quotebank data through cleaning and preprocessing (`preprocessingQuotebank.ipynb`). We do a sentiment analysis in `sentiment.ipynb`. Finally we explore the quotes and the imdb dataset (`movies.ipynb`).
+## Methods
+The repository has all auxiliary scripts and notebook in the `exploratory` directory. The final story is told in `milestone3.ipynb`.
+
+We filter the Quotebank data to match the top 10 movies per year based on box office revenue (`Quotebank_filter.ipynb`). The justification is that ...
+
+We run the Quotebank data through cleaning and preprocessing (`Quotebank_preprocess.ipynb`). We do an exploration of sentiment analysis approaches in `Quotebank_sentiment.ipynb`. Also, we explore the quotes and the IMDb dataset (`IMDb_investigation.ipynb`). The Box Office data is scraped from the web (`BoxOffice_webscrape.ipynb`) and reformatted to a data frame in `BoxOffice_preprocess.ipynb`. It is investigated in `BoxOffice_investigation.ipynb`.
 
 For subtasks (RQs) we plan to do the following:
 
@@ -54,10 +52,10 @@ RQ1:
 - Propensity score matching: calculate propensity score with logistic regression, based on movie attributes on IMDb data on few quote vs many quote movies and compare the results with box office data.
 
 RQ2:
-- Create a naive and simple sentiment model based on sentiment scores using Afinn sentiment lexicon and analyse time series by using a smoothness filter or moving average. Define a metric that normalizes the sentiment score with regards to the length of a quote.
-- Find a more clever and complex sentiment prediction model that incorporates semantic relations between words in quotes.
-- Sentiment of quote related to domestic box office revenue: similarly to RQ1.
-- Create comparison metric between IMDB rating and sentiment in quote and do linear regression to see if there's a mapping.
+- apply different sentiment scores (with various complexity) to the data and investigate the better approach (AFINN, VADER (lexicons) and BERT (transformer))
+- analyse time series by using a smoothness filter or moving average on the sentiment. Visualize accumulated sentiment score across time. 
+- sentiment of quote related to domestic box office revenue: similarly to RQ1.
+- create comparison metric between IMDb rating and sentiment in quote and do linear regression to see if there's a mapping.
 
 RQ3:
 - Pick similarly budgeted movies released close to each other, investigate how distribution of quotes and box office data evolves over time.
@@ -96,7 +94,3 @@ Eventually: implement "WhoSaidIt!" as a fun interactive feature (simply do a doc
 - Load the relevant quotes from Quotebank
 - Explore the Quotes
 - Find NLP model and try sentiment analysis on quotes, validate whether the model works
-
-## Questions for TAs 
-
-1) Related to RQ2.2 - is linear regression a suitable approach for comparing IMDb ratings to sentiment about movies?
