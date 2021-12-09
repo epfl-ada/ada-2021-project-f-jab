@@ -30,7 +30,7 @@ def wrangleData(df, time_attribute='year-month'):
     return df_wrangled
 
 
-def createPlotDF(df_all, attribute, y_label, time_attribute='year-month', N_samples=10, replace=True):
+def createPlotDF(df_all, attribute, y_label, dataset='boxOffice', time_attribute='year-month', N_samples=10, replace=True):
     """ takes as input; a dataframe, the attribute, time-attribute we investigate name we wish to investigate as well as
     number of movies in the subsample and whether it should be done with replacement or not.
     
@@ -60,10 +60,10 @@ def createPlotDF(df_all, attribute, y_label, time_attribute='year-month', N_samp
                 acc_mean += 0 
                 
             else: # when movie and time-index occur together, mean the specified scores from that time-index
-                #if attribute == 'posBERT_score':
-                    #df_sample[attribute] = (df_sample[attribute] - 0.5) * 2 #for negative sentiment interpretation
-                    
-                acc_mean += df_sample[condition][attribute].sum()
+                if dataset == 'Quotebank': # multiplies daily sentiment by number of Occurences of the quote.
+                    acc_mean += (df_sample[condition][attribute] * df_sample[condition]['numOccurrences']).sum()
+                else:
+                    acc_mean += df_sample[condition][attribute].sum()
             
             # add values to dataframe for plotting
             df_plot[i] = [time_idx, movie, acc_mean]
