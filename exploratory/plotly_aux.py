@@ -52,16 +52,26 @@ def createPlotDF(df_all, attribute, y_label, dataset='boxOffice', time_attribute
     # creating data frame for visualization
     for movie in tqdm(df_sample.movie.unique()):
         acc_mean = 0
-        for time_idx in df_sample[time_attribute].sort_values().unique():
+        sum_so_far = 0
+        for j, time_idx in enumerate(df_sample[time_attribute].sort_values().unique()):
             # checking whether movie/time-index pair exists in dataframe
             condition = np.logical_and(df_sample[time_attribute] == time_idx, df_sample['movie'] == movie)
 
             if condition.sum() == 0: # if movie and time-index does not occur together
                 acc_mean += 0 
-                
+            
             else: # when movie and time-index occur together, mean the specified scores from that time-index
                 if dataset == 'Quotebank': # multiplies daily sentiment by number of Occurences of the quote.
-                    acc_mean += (df_sample[condition][attribute] * df_sample[condition]['numOccurrences']).sum()
+                    #acc_mean += (df_sample[condition][attribute] * df_sample[condition]['numOccurrences']).sum()
+
+                    weighted_average_day = (df_sample[condition][attribute] * df_sample[condition].numOccurrences).sum() / df_sample[condition].numOccurrences.sum()  
+                    sum_so_far += weighted_average_day
+                                
+                    acc_mean = sum_so_far / (j + 1) # running average
+                    
+                    if np.abs(weighted_average_day) >= 1:
+                        print(weighted_average_day)
+                        
                 else:
                     acc_mean += df_sample[condition][attribute].sum()
             
@@ -71,48 +81,56 @@ def createPlotDF(df_all, attribute, y_label, dataset='boxOffice', time_attribute
     
     # creating dataframe and specifying column names
     df_plot = pd.DataFrame(df_plot).T
-    df_plot.columns = [time_attribute, 'movie', f'Accumulated {y_label}']
+    df_plot.columns = [time_attribute, 'movie', f'{y_label}']
 
     return df_plot, df_sample
 
 
-def animatedBarPlot(df_plot, y_label, title, time_attribute='year-month', speed=0.2, save_fig=True):
+def animatedBarPlot(df_plot, y_label, title, time_attribute='year-month', speed=0.2, save_fig=False):
     """ 
     speed must be between 0 and 1 where 1 is not included.
     """
 
     # finds lower and upper bound of plotly plot
-    upper = df_plot[f'Accumulated {y_label}'].max()
-    lower = df_plot[f'Accumulated {y_label}'].min()
+    upper = df_plot[f'{y_label}'].max()
+    lower = df_plot[f'{y_label}'].min()
     range_x = [np.round(lower + 0.05*lower), np.round(upper + 0.05*upper)]
 
     # makes the plotly object
     fig = px.bar(df_plot,
-                 x=f'Accumulated {y_label}',
+                 x=f'{y_label}',
                  y='movie',
                  orientation='h',
                  animation_frame=time_attribute,
+                 hover_name='movie',
                  color="movie",
+                 color_continuous_scale='RdBu',   
                  animation_group="movie",
                  range_x=range_x,
                  title=title)
 
     # changes the speed
+    
     fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = (1-speed) * 1000
     fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = (1-speed) * 1000
-    fig.update_yaxes(categoryorder="total ascending") # found command for ascending here: https://community.plotly.com/t/plotly-express-histogram-any-way-to-sort-bar-by-value/23905/2
-    #fig.update_yaxes(automargin=False)
+    
+    fig.update_traces(hoverinfo='all', hovertemplate = '%{y}<br>%{x:.4s}'+ '<extra></extra>')
+    #fig.update_traces(texttemplate='%{y}<br>%{x:.4s}')   
+    fig.layout.updatemenus[0].buttons[0].args[1]['fromcurrent'] = True
+    
+    fig.update_yaxes(showticklabels=False) 
     fig.update_layout(showlegend=False)
     
-    fig.show()
+    fig.update_yaxes(categoryorder="total ascending") # found command for ascending here: https://community.plotly.com/t/plotly-express-histogram-any-way-to-sort-bar-by-value/23905/2
 
     if save_fig:
         filename = f"{y_label} - {time_attribute} - {len(df_plot.movie.unique())}"
         plot_dir = os.getcwd() + os.sep + 'plotlyplots'
-        pio.renderers.default = 'browser'
-        pio.show(fig)
         fig.write_html(rf"{plot_dir}{os.sep}{filename}.html")
 
         print(f"saved html version of plot to: {plot_dir}")
+        
+    pio.renderers.default = 'browser'
+    pio.show(fig)
         
     return fig
