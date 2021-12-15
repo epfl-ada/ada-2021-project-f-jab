@@ -104,7 +104,8 @@ def animatedBarPlot(df_plot, y_label, title, time_attribute='year-month', speed=
                  animation_frame=time_attribute,
                  hover_name='movie',
                  color="movie",
-                 color_continuous_scale='RdBu',   
+                 #color_continuous_scale='RdBu',  
+                 color_discrete_sequence=px.colors.qualitative.Safe_r,
                  animation_group="movie",
                  range_x=range_x,
                  title=title)
@@ -115,11 +116,16 @@ def animatedBarPlot(df_plot, y_label, title, time_attribute='year-month', speed=
     fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = (1-speed) * 1000
     
     fig.update_traces(hoverinfo='all', hovertemplate = '%{y}<br>%{x:.4s}'+ '<extra></extra>')
-    #fig.update_traces(texttemplate='%{y}<br>%{x:.4s}')   
+    fig.update_traces(texttemplate='<b>%{y}</b><br>%{x:.4s}')   
     fig.layout.updatemenus[0].buttons[0].args[1]['fromcurrent'] = True
     
-    fig.update_yaxes(showticklabels=False) 
-    fig.update_layout(showlegend=False)
+    
+    num_unique = df_plot.movie.unique().__len__()
+    if y_label != 'sentiment':
+        fig.update_yaxes(range=(num_unique - 10.5, num_unique - 0.5))
+    fig.update_yaxes(showticklabels=False)
+    fig.update_layout(showlegend=False, yaxis_title="Rank",)
+    
     
     fig.update_yaxes(categoryorder="total ascending") # found command for ascending here: https://community.plotly.com/t/plotly-express-histogram-any-way-to-sort-bar-by-value/23905/2
 
