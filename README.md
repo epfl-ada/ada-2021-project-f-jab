@@ -43,7 +43,7 @@ Since the Box Office data is domestic from the U.S. and since we have access to 
 ## Methods
 The repository has all auxiliary scripts and notebook in the `exploratory` directory. The final story is told in `milestone3.ipynb`.
 
-We filter the Quotebank data to match the top 10 movies per year based on box office revenue (`Quotebank_filter.ipynb`).  For the analysis of sentiments and box office, we decided to use top 10 movies per year. We tried filtering on top 50 movies and visualized the accumulated number of quotes per movies. We observed that after our chosen threshold (top 10) there were significantly less than 1000 quotes/movie/year, meaning approximately 3 quotes per day per movie, which would make our time series analysis biased. 
+We filter the Quotebank data to match the top 10 movies per year based on box office revenue (`Quotebank_filter.ipynb`).  For the analysis of sentiments and box office, we decided to use top 10 movies per year. We tried filtering on top 50 movies and visualized the accumulated number of quotes per movies. We observed that after our chosen threshold (top 10) there were significantly less than 500 quotes/movie/year, meaning approximately 1-2 quotes per day per movie, which would make our time series analysis biased. 
 
 We run the Quotebank data through cleaning and preprocessing (`Quotebank_preprocess.ipynb`). We do an exploration of sentiment analysis approaches in `Quotebank_sentiment.ipynb`. Also, we explore the quotes and the IMDb dataset (`IMDb_investigation.ipynb`). The Box Office data is scraped from the web (`BoxOffice_webscrape.ipynb`) and reformatted to a data frame in `BoxOffice_preprocess.ipynb`. It is investigated in `BoxOffice_investigation.ipynb`. 
 
@@ -66,8 +66,9 @@ RQ3:
 - Fit Vector Autoregression models to time series of box office and daily sentiment score, do time series analysis and apply Granger causality test to determine casual effects
 
 RQ4:
-- Do observational study where a certain "bias"-parameter is investigated from matching e.g. actors or movies on the remaining available data. (e.g. investigate whether Thriller and Action differ in rating) 
-- Use latent analysis like PCA and reduce dimensionality to 2D for visual inspection.
+- Extract genders from Wikidata and investigate BERT score distributions of movies, check if there are biased movies 
+- Search for IMDb rating bias with linear regression, t-test for comparison of male and female votes, check influence of generations on movie ratings
+
 
 RQ5:
 -  Calculate mean number of quotes on movies between 2015-2019 on a daily basis, calculate confidence intervals (bootstrapping), compare with 2020 data
@@ -77,5 +78,5 @@ RQ5:
 
 - Albert: Preprocessing of quotes and Box Office, sentiment analysis, investigation of RQ3, Preparing Data Story website.
 - Felix: Webscraping of Box Office data, Investigation of RQ2, Preparing Data Story website.
-- Julian: Filtering of Quotebank, investigation of RQ4.
+- Julian: Filtering of Quotebank, investigation of RQ4, Loading and Processing of wikidata parquet files
 - Benedek: Investigation of RQ1 and RQ3, Researched Time Series Analysis Methods for RQ2 & RQ3.
