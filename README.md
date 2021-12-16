@@ -1,4 +1,8 @@
-# Moviez - ADA project
+# Quotes'N'Movies - ADA project (F-JAB)
+
+*OBS: Our milestone3 (final hand-in) is located in the `main.ipynb`-notebook. The `data`-folder used for the project as well as webscraping, filtering of Quotebank, preprocessing and exploratory investigations are located in the `exploratory`-folder. The same holds for plotly plots used on the webpage.*
+
+*OBS: We emphasize that the design principle for the data story has been to built a webpage that is understandable to a wide-ranging target group, including both data scientists and grandmothers. All the research backing up our statements are found in the `main.ipynb` or the exploratory investigations.*
 
 ## Abstract
 
@@ -35,6 +39,8 @@ To be able to answer our research questions we need at least the following two s
 1) **IMDb movies extensive dataset** from Kaggle (https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset). The data consists of 4 sub-datasets of movie data ranging from 1874-2027 from the IMDb webpage for movies with more than 100 reviews. We use the `movies.csv` and `ratings.csv` data files for analyses in which we can access movie titles, year of release, genre, language, IMDb ratings and age and gender of the voters, also whether the voter is American. We could use RottenTomatoes dataset (referred to at Kaggle) for critics ratings.
 
 2) **Box Office dataset** from BoxOfficeMojo (by IMDb). We've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. (see `time_series_box_office_scraping-ipynb`).
+
+3) **WikiData** - this relational database is used for mapping additional information to the Quotebank data. We will use it to deal with speakers (such as searching for their quote-ID's and mapping gender information to the quotes.
 
 
 Since the Box Office data is domestic from the U.S. and since we have access to determining whether IMDb ratings are from U.S or non U.S. voters, we will restrict ourselves to look at movie data with all relevant domestic attributes are restricted to the U.S..
