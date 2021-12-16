@@ -1,5 +1,7 @@
 # Moviez - ADA project
 
+*OBS: Our milestone3 is located in the "main.ipynb". Everything in exploratory is data or just that, exploratory notebooks.*
+
 ## Abstract
 
 This study aims to investigate the correlation between quotes about movies made by people in news articles, movie IMDB rating and movie box office revenue. Furthermore, we intend to investigate whether some quotes may correlate with daily box office revenue. The quotebank dataset gives us a unique opportunity to investigate this correlation and to speculate how certain quotes may influence the sale of tickets for certain movies. We intend to do a semantic analysis on the quotes and investigate whether the old saying “bad publicity is good publicity” is indeed true. Will opinions of movie critics influence the daily box office revenue or will it not have any influence at all?
@@ -9,24 +11,27 @@ This study will hopefully lay the groundwork for further research into how quote
 
 ## Research Questions
 
-We aim at addressing the following 4-5 main points with provided research questions (RQ):
+We aim at addressing the following 5 main points with provided research questions (RQ):
 
-1) Relation between Box Office sales and number of quotes of a movie.
-	- RQ1: *Is there a tendency between number of sold tickets and the 'hype' about a movie as it appears in the news paper media?*
+1) RQ1: Relation between Box Office sales and number of quotes of a movie
+	1.1. Linear regression between total number of quotes on a movie and domestic box office revenue
+	1.2. Observational study with propensity score matching
 	
-2) Sentiment analysis in quotes about movies over time. Additionaly relate sentiment to Box Office sales and see if positive/negative media coverage affect the sale of tickets.
-	- RQ2.1: *Does the media/quoters opinion on a certain movie affect the amount of sold tickets?*
-	- RQ2.2: *Does the sentiment seen in quotes relate to the rating on IMDB?*
+2) RQ2: An Investigation into Time Series Box Office and Quotes in a Few Movies
+	2.1. Initial analysis and Kolmogorov-Smirnov test
+	2.2. Checking correlation and Granger causality
 	
-3) Analyze interdependencies between movies.
-	- RQ3: *How does the premiere dates and "public" opinion on a movie and its sales interfere with the sales of another movie and its premiere data?*
+3) RQ3: Sentiment analysis in quotes about movies over time
+	3.1 Sentiment and Box Office
+	3.2. Sentiment and IMDb - (WIP)
 
-4) (Maybe:) Interpret if there is a bias in the data
-	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie w.r.t gender, ethnicity, etc.?*
+4) RQ4: Searching for a bias in the data
+	4.1. Are quotes in Quotebank regarding movies biased?
+	4.2. Bias in Internet Movie Database ratings
 
-5) (Maybe:) The effect of COVID on media coverage of movies.
-	- RQ5: *Are movies between 2015-2019 quoted more frequently on average than movies came out during the pandemic, is the difference significant?*
-	
+5) RQ5: The effect of COVID on media coverage of movies
+	5.1. Calculate mean number of quotes on movies between 2015-2019 on a daily basis, calculate confidence intervals (bootstrapping), compare with 2020 data
+	5.2. Use regression for comparison of the mean number of quotes across movies in covid and non-covid period, use t-test for comparison of means
 
 ## Proposed additional datasets
 
