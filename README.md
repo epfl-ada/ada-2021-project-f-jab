@@ -36,7 +36,7 @@ This study will hopefully lay the groundwork for further research into how quote
 
 ## Research Questions
 
-We aim at addressing the following 4-5 main points with provided research questions (RQ):
+We aim at addressing the following 5 main points with provided research questions (RQ):
 
 1) Relation between Box Office sales and number of quotes of a movie
 	- RQ1: *Is there a tendency between number of sold tickets and the 'hype' about a movie as it appears in the news paper media?*
@@ -60,7 +60,7 @@ To be able to answer our research questions we need at least the following two s
 
 1) **IMDb movies extensive dataset** from Kaggle (https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset). The data consists of 4 sub-datasets of movie data ranging from 1874-2027 from the IMDb webpage for movies with more than 100 reviews. We use the `movies.csv` and `ratings.csv` data files for analyses in which we can access movie titles, year of release, genre, language, IMDb ratings and age and gender of the voters, also whether the voter is American. We could use RottenTomatoes dataset (referred to at Kaggle) for critics ratings.
 
-2) **Box Office dataset** from BoxOfficeMojo (by IMDb). We've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. (see `time_series_box_office_scraping-ipynb`).
+2) **Box Office dataset** from BoxOfficeMojo (by IMDb). We've been webscraping and created our own `.csv`-files. By accessing the webpage of a given movie (e.g. Star Wars: https://www.boxofficemojo.com/release/rl3305145857/?ref_=bo_gr_rls) we create a `csv`-file using `BeautifulSoup` containing info such as daily gross from domestic (U.S) movie theater for the full broadcasting period, distributor of the movie and number of theaters where it aired. (see `BoxOffice_webscrape.ipynb`).
 
 3) **WikiData** - this relational database is used for mapping additional information to the Quotebank data. We will use it to deal with speakers (such as searching for their quote-ID's and mapping gender information to the quotes.
 
@@ -73,7 +73,7 @@ The repository has all auxiliary scripts and notebook in the `exploratory` direc
 
 We filter the Quotebank data to match the top 10 movies per year based on box office revenue (`Quotebank_filter.ipynb`).  For the analysis of sentiments and box office, we decided to use top 10 movies per year. We tried filtering on top 50 movies and visualized the accumulated number of quotes per movies. We observed that after our chosen threshold (top 10) there were significantly less than 500 quotes/movie/year, meaning approximately 1-2 quotes per day per movie, which would make our time series analysis biased. 
 
-We run the Quotebank data through cleaning and preprocessing (`Quotebank_preprocess.ipynb`). We do an exploration of sentiment analysis approaches in `Quotebank_sentiment.ipynb`. Also, we explore the quotes and the IMDb dataset (`IMDb_investigation.ipynb`). The Box Office data is scraped from the web (`BoxOffice_webscrape.ipynb`) and reformatted to a data frame in `BoxOffice_preprocess.ipynb`. It is investigated in `BoxOffice_investigation.ipynb`. 
+We run the Quotebank data through cleaning and preprocessing (`Quotebank_preprocess.ipynb`). We do an exploration of sentiment analysis approaches in `Quotebank_sentiment.ipynb`. The Box Office data is scraped from the web (`BoxOffice_webscrape.ipynb`) and reformatted to a data frame in `BoxOffice_preprocess.ipynb`.
 
 For subtasks (RQs) we did the following investigations:
 
