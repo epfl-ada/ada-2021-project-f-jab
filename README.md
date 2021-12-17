@@ -1,6 +1,7 @@
 # Moviez - ADA project
 
 *OBS: Our milestone3 is located in the "main.ipynb". Everything in exploratory is data or just that, exploratory notebooks.*
+*Our data story can be found via this link: https://albertkjoller.github.io/QuotesNMovies/*
 
 ## Abstract
 
