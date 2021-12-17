@@ -105,7 +105,7 @@ def animatedBarPlot(df_plot, y_label, title, time_attribute='year-month', speed=
                  hover_name='movie',
                  color="movie",
                  #color_continuous_scale='RdBu',  
-                 color_discrete_sequence=px.colors.qualitative.Safe_r,
+                 color_discrete_sequence=px.colors.qualitative.Vivid_r,
                  animation_group="movie",
                  range_x=range_x,
                  title=title)
