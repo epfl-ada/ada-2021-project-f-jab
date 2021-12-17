@@ -15,24 +15,34 @@ This study will hopefully lay the groundwork for further research into how quote
 We aim at addressing the following 5 main points with provided research questions (RQ):
 
 1) RQ1: Relation between Box Office sales and number of quotes of a movie
+
 	1.1. Linear regression between total number of quotes on a movie and domestic box office revenue
-	1.2. Observational study with propensity score matching
+
+	3.2. Observational study with propensity score matching
 	
 2) RQ2: An Investigation into Time Series Box Office and Quotes in a Few Movies
+
 	2.1. Initial analysis and Kolmogorov-Smirnov test
-	2.2. Checking correlation and Granger causality
+
+	4.2. Checking correlation and Granger causality
 	
 3) RQ3: Sentiment analysis in quotes about movies over time
+
 	3.1 Sentiment and Box Office
-	3.2. Sentiment and IMDb - (WIP)
+
+	5.2. Sentiment and IMDb - (WIP)
 
 4) RQ4: Searching for a bias in the data
+
 	4.1. Are quotes in Quotebank regarding movies biased?
-	4.2. Bias in Internet Movie Database ratings
+
+	6.2. Bias in Internet Movie Database ratings
 
 5) RQ5: The effect of COVID on media coverage of movies
+
 	5.1. Calculate mean number of quotes on movies between 2015-2019 on a daily basis, calculate confidence intervals (bootstrapping), compare with 2020 data
-	5.2. Use regression for comparison of the mean number of quotes across movies in covid and non-covid period, use t-test for comparison of means
+
+	7.2. Use regression for comparison of the mean number of quotes across movies in covid and non-covid period, use t-test for comparison of means
 
 ## Proposed additional datasets
 
