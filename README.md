@@ -9,6 +9,24 @@ Data story: https://albertkjoller.github.io/QuotesNMovies/
 *OBS: Our milestone3 is located in the "main.ipynb". Everything in exploratory is data or just that, exploratory notebooks.*
 *Our data story can be found via this link: https://albertkjoller.github.io/QuotesNMovies/*
 
+## Repo structure
+
+- exploratory -- Background ressources: Loading and preprocessing of datasets, creating plotly plots for webpage, stored datasets
+	- data -- the saved datasets used for our analyses
+	- plotlyplots -- html files with plotly plots, to include in our Website
+	- BoxOffice_preprocess.ipynb -- preprocess boxoffice data and save to boxOffice.pkl
+	- BoxOffice_webscrape.ipynb -- scrape BoxOffice data from boxofficemojo.com
+	- plotly_bias.ipynb -- create plotly plots for RQ4: bias in the data
+	- plotly_boxOffice.ipynb -- createe plotly plots for the boxOffice dataset
+	- plotly_IMDb.ipynb -- create plotly plots for imdb dataset
+	- plotly_sentiment.ipynb -- create plotly plots about the sentiment of quotes
+	- Quotebank_filter.ipynb -- filter Quotebank (this notebook was run in colab to filter the quotes for movies in the first place)
+	- Quotebank_preprocess.ipynb -- clean and preprocess the files retrieved from colab/Google Drive
+	- Quotebank_sentiment.ipynb -- run the sentiment analysis with BERT on the quotes
+	- plotly_aux.py -- plotly helper functions
+- main.ipynb -- The notebook for our project: Executing our project on preprocessed data from Quotebank, imdb, and the webscraped Box Office Data
+- README.md -- this readme
+
 ## Abstract
 
 This study aims to investigate the correlation between quotes about movies made by people in news articles, movie IMDB rating and movie box office revenue. Furthermore, we intend to investigate whether some quotes may correlate with daily box office revenue. The quotebank dataset gives us a unique opportunity to investigate this correlation and to speculate how certain quotes may influence the sale of tickets for certain movies. We intend to do a semantic analysis on the quotes and investigate whether the old saying “bad publicity is good publicity” is indeed true. Will opinions of movie critics influence the daily box office revenue or will it not have any influence at all?
@@ -51,7 +69,7 @@ Since the Box Office data is domestic from the U.S. and since we have access to 
 
 
 ## Methods
-The repository has all auxiliary scripts and notebook in the `exploratory` directory. The final story is told in `milestone3.ipynb`.
+The repository has all auxiliary scripts and notebook in the `exploratory` directory. The final story is told in `main.ipynb`.
 
 We filter the Quotebank data to match the top 10 movies per year based on box office revenue (`Quotebank_filter.ipynb`).  For the analysis of sentiments and box office, we decided to use top 10 movies per year. We tried filtering on top 50 movies and visualized the accumulated number of quotes per movies. We observed that after our chosen threshold (top 10) there were significantly less than 500 quotes/movie/year, meaning approximately 1-2 quotes per day per movie, which would make our time series analysis biased. 
 
