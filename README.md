@@ -29,7 +29,7 @@ We aim at addressing the following 4-5 main points with provided research questi
 	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie w.r.t gender, ethnicity, etc.?*
 
 5) The effect of COVID on media coverage of movies
-	- RQ5: *Does 2020 movies have significantly lower media coverages compared to movies between 2015-2019?
+	- RQ5: *Does 2020 movies have significantly lower media coverages compared to movies between 2015-2019?*
 
 
 ## Proposed additional datasets
