@@ -18,37 +18,23 @@ This study will hopefully lay the groundwork for further research into how quote
 
 ## Research Questions
 
-We aim at addressing the following 5 main points with provided research questions (RQ):
+We aim at addressing the following 4-5 main points with provided research questions (RQ):
 
-1) RQ1: Relation between Box Office sales and number of quotes of a movie
+1) Relation between Box Office sales and number of quotes of a movie
+	- RQ1: *Is there a tendency between number of sold tickets and the 'hype' about a movie as it appears in the news paper media?*
 
-	1.1. Linear regression between total number of quotes on a movie and domestic box office revenue
-
-	3.2. Observational study with propensity score matching
+2) Analyze interdependencies between movies and the effect of quotes on box office with time series
+	- RQ2: *How does the premiere dates and "public" opinion on a movie and its sales interfere with the sales of another movie and its premiere data?*
 	
-2) RQ2: An Investigation into Time Series Box Office and Quotes in a Few Movies
+3) Sentiment analysis in quotes about movies over time. Additionaly relate sentiment to Box Office sales and see if positive/negative media coverage affect the sale of tickets.
+	- RQ2.1: *Does the media/quoters opinion on a certain movie affect the amount of sold tickets?*
+	- RQ2.2: *Does the sentiment seen in quotes relate to the rating on IMDB?*
 
-	2.1. Initial analysis and Kolmogorov-Smirnov test
+4) Interpret if there is a bias in the data
+	- RQ4: *Is there a bias within the quotes and sentiment or rating of a movie w.r.t gender, ethnicity, etc.?*
 
-	4.2. Checking correlation and Granger causality
-	
-3) RQ3: Sentiment analysis in quotes about movies over time
-
-	3.1 Sentiment and Box Office
-
-	5.2. Sentiment and IMDb - (WIP)
-
-4) RQ4: Searching for a bias in the data
-
-	4.1. Are quotes in Quotebank regarding movies biased?
-
-	6.2. Bias in Internet Movie Database ratings
-
-5) RQ5: The effect of COVID on media coverage of movies
-
-	5.1. Calculate mean number of quotes on movies between 2015-2019 on a daily basis, calculate confidence intervals (bootstrapping), compare with 2020 data
-
-	7.2. Use regression for comparison of the mean number of quotes across movies in covid and non-covid period, use t-test for comparison of means
+5) The effect of COVID on media coverage of movies
+	- RQ5: *Does 2020 movies have significantly lower media coverages compared to movies between 2015-2019?*
 
 ## Proposed additional datasets
 
