@@ -3,6 +3,7 @@
 *OBS: Our milestone3 (final hand-in) is located in the `main.ipynb`-notebook. The `data`-folder used for the project as well as webscraping, filtering of Quotebank, preprocessing and exploratory investigations are located in the `exploratory`-folder. The same holds for plotly plots used on the webpage.*
 
 Data story: https://albertkjoller.github.io/QuotesNMovies/ 
+
 *OBS: We emphasize that the design principle for the data story has been to built a webpage that is understandable to a wide-ranging target group, including both data scientists and grandmothers. All the research backing up our statements are found in the `main.ipynb` or the exploratory investigations.*
 
 ## Abstract
